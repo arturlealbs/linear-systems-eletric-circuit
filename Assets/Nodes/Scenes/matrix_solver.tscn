@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dun74cya7x3ye"]
+[gd_scene load_steps=2 format=3 uid="uid://dun74cya7x3ye"]
+
+[ext_resource type="Script" path="res://Assets/Code/matrix_solver.cs" id="1_umksv"]
 
 [node name="MatrixSolver" type="Node"]
+script = ExtResource("1_umksv")
