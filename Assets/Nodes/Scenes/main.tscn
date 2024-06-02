@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8nf41yl67n3r"]
+
+[ext_resource type="PackedScene" uid="uid://fju11jytr6u3" path="res://Assets/Nodes/Scenes/front_end.tscn" id="1_lphao"]
+[ext_resource type="PackedScene" uid="uid://b5p0xlkrs4xn8" path="res://Assets/Nodes/Scenes/back_end.tscn" id="2_etorv"]
+
+[node name="Main" type="Node"]
+
+[node name="Back End" parent="." instance=ExtResource("2_etorv")]
+
+[node name="Front End" parent="." instance=ExtResource("1_lphao")]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5p0xlkrs4xn8"]
+
+[ext_resource type="PackedScene" uid="uid://bty0lkxx37bm2" path="res://Assets/Nodes/Scenes/matrix_data.tscn" id="1_kidfs"]
+[ext_resource type="PackedScene" uid="uid://dun74cya7x3ye" path="res://Assets/Nodes/Scenes/matrix_solver.tscn" id="2_khiv6"]
+
+[node name="BackEnd" type="Node"]
+
+[node name="MatrixData" parent="." instance=ExtResource("1_kidfs")]
+
+[node name="MatrixSolver" parent="." instance=ExtResource("2_khiv6")]
