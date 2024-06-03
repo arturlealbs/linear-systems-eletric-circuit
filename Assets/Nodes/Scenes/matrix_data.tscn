@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bty0lkxx37bm2"]
+[gd_scene load_steps=2 format=3 uid="uid://bty0lkxx37bm2"]
+
+[ext_resource type="Script" path="res://Assets/Code/MatrixData.cs" id="1_we8e5"]
 
 [node name="MatrixData" type="Node"]
+script = ExtResource("1_we8e5")
