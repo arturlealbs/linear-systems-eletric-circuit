@@ -24,4 +24,8 @@ public partial class BackEnd : Node
 			return MatrixSolver.SolveLinearSystem(CoefficientsMatrix, ConstantsMatrix);
 		}
 	}
+
+	public void AbortCircuitUpdateCall(){
+		_matrixData.ReverseModification();
+	}
 }
