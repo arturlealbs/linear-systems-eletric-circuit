@@ -12,21 +12,21 @@ public partial class MatrixData: Node
 	};
 	private static readonly double [] KclConstantsEquations = new double[4] {0, 0, 0, 0};
 
+	private double[] lastModification;
 	private double [] v = new double[12] {0,0,0,0,0,0,0,0,0,0,0,0};
 	private double [] r = new double[12] {0,0,0,0,0,0,0,0,0,0,0,0};
 
-	public void SetBattery(int id, double value)
+	public void SetComponents(int id, double rValue, double vValue)
 	{
-		v[id] = value;
-		r[id] = 0;
+		lastModification = new double[] { id, r[id], v[id] };
+		v[id] = vValue;
+		r[id] = rValue;
 	}
 
-	public void SetResistor(int id, double value)
-	{
-		r[id] = value;
-		v[id] = 0;
+	public void ReverseModification(){
+		SetComponents((int)lastModification[0], lastModification[1], lastModification[2]);
 	}
-	
+
 	public bool CheckForShortCircuit()
 	{
 		double [][] kvlCoefficientsEquations = GetKvlCoefficientsEquations();
