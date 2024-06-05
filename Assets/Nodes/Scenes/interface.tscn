@@ -1,0 +1,185 @@
+[gd_scene load_steps=7 format=3 uid="uid://fju11jytr6u3"]
+
+[ext_resource type="Script" path="res://Assets/Code/interface.gd" id="1_seadv"]
+[ext_resource type="PackedScene" uid="uid://cv6ns4j7lk6ll" path="res://Assets/Nodes/Scenes/edge.tscn" id="2_skuse"]
+[ext_resource type="PackedScene" uid="uid://c4550alnvl3c3" path="res://Assets/Nodes/UI/add_component_panel.tscn" id="3_kctal"]
+[ext_resource type="PackedScene" uid="uid://4iybrhxx8nd7" path="res://Assets/Nodes/Scenes/vertex.tscn" id="4_rhj05"]
+[ext_resource type="PackedScene" uid="uid://bfnpbt6furpv0" path="res://Assets/Nodes/UI/short_circuit_warning_pannel.tscn" id="5_1rf5w"]
+[ext_resource type="PackedScene" uid="uid://dmfaq8gctwd1o" path="res://Assets/Nodes/Scenes/current_label.tscn" id="5_6ulyj"]
+
+[node name="Interface" type="Node"]
+script = ExtResource("1_seadv")
+
+[node name="Edges" type="Node" parent="."]
+
+[node name="Edge0" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(768, 160)
+rotation = -1.57079
+
+[node name="Edge1" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(576, 352)
+id = 1
+
+[node name="Edge2" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(1152, 160)
+rotation = -1.57079
+id = 2
+
+[node name="Edge3" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(960, 352)
+id = 3
+
+[node name="Edge4" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(768, 544)
+rotation = -1.57079
+id = 4
+
+[node name="Edge5" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(1344, 352)
+id = 5
+
+[node name="Edge6" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(1152, 544)
+rotation = -1.57079
+id = 6
+
+[node name="Edge7" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(576, 736)
+id = 7
+
+[node name="Edge8" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(768, 928)
+rotation = -1.57079
+id = 8
+
+[node name="Edge9" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(960, 736)
+id = 9
+
+[node name="Edge10" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(1152, 928)
+rotation = -1.57079
+id = 10
+
+[node name="Edge11" parent="Edges" instance=ExtResource("2_skuse")]
+position = Vector2(1344, 736)
+id = 11
+
+[node name="Vertices" type="Node" parent="."]
+
+[node name="Vertex_1_1" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(576, 160)
+
+[node name="Vertex_1_2" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(960, 160)
+
+[node name="Vertex_1_3" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(1344, 160)
+
+[node name="Vertex_2_1" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(576, 544)
+
+[node name="Vertex_2_2" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(960, 544)
+
+[node name="Vertex_2_3" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(1344, 544)
+
+[node name="Vertex_3_1" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(576, 928)
+
+[node name="Vertex_3_2" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(960, 928)
+
+[node name="Vertex_3_3" parent="Vertices" instance=ExtResource("4_rhj05")]
+position = Vector2(1344, 928)
+
+[node name="Panels" type="Node" parent="."]
+
+[node name="AddComponentPanel" parent="Panels" instance=ExtResource("3_kctal")]
+
+[node name="ShortCircuitWarningPanel" parent="Panels" instance=ExtResource("5_1rf5w")]
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="CurrentLabel_0" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 736.0
+offset_top = 48.0
+offset_right = -1120.0
+offset_bottom = -968.0
+
+[node name="CurrentLabel_1" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 448.0
+offset_top = 320.0
+offset_right = -1408.0
+offset_bottom = -696.0
+
+[node name="CurrentLabel_2" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 1120.0
+offset_top = 48.0
+offset_right = -736.0
+offset_bottom = -968.0
+current_id = 1
+
+[node name="CurrentLabel_3" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 832.0
+offset_top = 320.0
+offset_right = -1024.0
+offset_bottom = -696.0
+current_id = 4
+
+[node name="CurrentLabel_4" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 736.0
+offset_top = 592.0
+offset_right = -1120.0
+offset_bottom = -424.0
+current_id = 3
+
+[node name="CurrentLabel_5" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 1408.0
+offset_top = 320.0
+offset_right = -448.0
+offset_bottom = -696.0
+current_id = 1
+
+[node name="CurrentLabel_6" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 1120.0
+offset_top = 432.0
+offset_right = -736.0
+offset_bottom = -584.0
+current_id = 1
+
+[node name="CurrentLabel_7" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 448.0
+offset_top = 704.0
+offset_right = -1408.0
+offset_bottom = -312.0
+current_id = 6
+
+[node name="CurrentLabel_8" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 736.0
+offset_top = 976.0
+offset_right = -1120.0
+offset_bottom = -40.0
+current_id = 6
+
+[node name="CurrentLabel_9" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 1024.0
+offset_top = 704.0
+offset_right = -832.0
+offset_bottom = -312.0
+current_id = 4
+
+[node name="CurrentLabel_10" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 1120.0
+offset_top = 976.0
+offset_right = -736.0
+offset_bottom = -40.0
+current_id = 7
+
+[node name="CurrentLabel_11" parent="Labels" instance=ExtResource("5_6ulyj")]
+offset_left = 1408.0
+offset_top = 704.0
+offset_right = -448.0
+offset_bottom = -312.0
+current_id = 7

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class BackEnd : Node
+public partial class Core : Node
 {
 	private MatrixData _matrixData;
 

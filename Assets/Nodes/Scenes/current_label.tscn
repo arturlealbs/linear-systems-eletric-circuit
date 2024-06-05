@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmfaq8gctwd1o"]
+
+[ext_resource type="Script" path="res://current_label.gd" id="1_ignp3"]
+
+[node name="CurrentLabel" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1856.0
+offset_bottom = -1016.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ignp3")

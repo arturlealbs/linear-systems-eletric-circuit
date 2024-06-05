@@ -21,6 +21,7 @@ public partial class MatrixData: Node
 		lastModification = new double[] { id, r[id], v[id] };
 		v[id] = vValue;
 		r[id] = rValue;
+		
 	}
 
 	public void ReverseModification(){

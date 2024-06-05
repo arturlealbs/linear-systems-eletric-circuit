@@ -5,7 +5,7 @@ public partial class MatrixSolver: Node
 {
 	public static double[] SolveLinearSystem(double[][] A, double[] b)
 	{
-		int n = 8;
+		int n = A.Length;
 		double[][] L = new double[n][];
 		double[][] U = new double[n][];
 		int[] P = new int[n];
@@ -17,16 +17,15 @@ public partial class MatrixSolver: Node
 			P[i] = i;
 		}
 
-		LU_DecompositionWithPivot(A, L, U, P);
+		LU_DecompositionWithPivot(A, n, L, U, P);
 
-		double[] x = SolveLU(L, U, P, b);
+		double[] x = SolveLU(n, L, U, P, b);
 
 		return x;
 	}
 
-	static void LU_DecompositionWithPivot(double[][] A, double[][] L, double[][] U, int[] P)
+	static void LU_DecompositionWithPivot(double[][] A, int n, double[][] L, double[][] U, int[] P)
 	{
-		int n = A.Length;
 		for (int i = 0; i < n; i++)
 		{
 			L[i][i] = 1;
@@ -72,9 +71,8 @@ public partial class MatrixSolver: Node
 		}
 	}
 
-	static double[] SolveLU(double[][] L, double[][] U, int[] P, double[] b)
+	static double[] SolveLU(int n, double[][] L, double[][] U, int[] P, double[] b)
 	{
-		int n = L.Length;
 		double[] y = new double[n];
 		double[] x = new double[n];
 		double[] Pb = new double[n];
