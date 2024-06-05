@@ -51,7 +51,7 @@ func _on_confirm_button_pressed():
 	hide()
 
 
-func _on_cancel_button_pressed():
+func _on_cancel_butt2on_pressed():
 	hide()
 
 func _on_close_requested():

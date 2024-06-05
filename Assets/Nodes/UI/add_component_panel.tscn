@@ -6,7 +6,7 @@
 
 [node name="AddComponentPanel" type="Window"]
 disable_3d = true
-title = "Add New Component"
+title = "Novo Componente"
 initial_position = 4
 size = Vector2i(250, 150)
 visible = false
@@ -47,7 +47,7 @@ text = "Resistor"
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_nq14o")
-text = "Battery"
+text = "Gerador"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
