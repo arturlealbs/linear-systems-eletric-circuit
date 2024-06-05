@@ -19,7 +19,7 @@ func _ready():
 	
 func connect_panels() -> void:
 	add_component_panel.confirmed_circuit_update.connect(get_components_value)
-	short_circuit_warning_panel.confirmed_circuit_update.connect(entered_short_circuit)
+	short_circuit_warning_panel.confirmed_circuit_update.connect(set_short_circuit)
 	short_circuit_warning_panel.cancelled_circuit_update.connect(cancel_circuit_update)
 	short_circuit_warning_panel.blocked_short_circuit_warning.connect(block_short_circuit_alert)
 	
@@ -37,7 +37,7 @@ func get_components_value(r:float, v:float):
 
 func update_circuit(currents: Array[float]) -> void:
 	if is_in_short_circuit:
-		fix_short_circuit()
+		set_short_circuit(false)
 	update_labels(currents)
 	
 func update_labels(currents: Array[float]):
@@ -51,25 +51,18 @@ func emit_short_circuit_alert():
 func cancel_circuit_update() -> void:
 	cancelled_circuit_update.emit()
 
-func entered_short_circuit() -> void:
-	is_in_short_circuit = true
+func set_short_circuit(b: bool) -> void:
+	is_in_short_circuit = b
 	for group in get_children():
 		if group.name == "Labels":
 			for label in group.get_children():
-				label.visible = false
+				label.visible = not b
 		if group.name != "Panels":
 			for child in group.get_children():
-				child.modulate = Color(0.5, 0.5, 0.5, 1)
-
-func fix_short_circuit() -> void:
-	is_in_short_circuit = false
-	for group in get_children():
-		if group.name == "Labels":
-			for label in group.get_children():
-				label.visible = true
-		if group.name != "Panels":
-			for child in group.get_children():
-				child.modulate = Color(1, 1 ,1, 1)
+				if b:
+					child.modulate = Color(0.5, 0.5, 0.5, 1)
+				else:
+					child.modulate = Color(1, 1, 1, 1)
 
 func block_short_circuit_alert() -> void:
 	can_emit_short_circuit_alert = false

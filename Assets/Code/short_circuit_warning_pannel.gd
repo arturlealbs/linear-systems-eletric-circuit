@@ -1,11 +1,11 @@
 extends Window
 
-signal confirmed_circuit_update()
+signal confirmed_circuit_update(b: bool)
 signal cancelled_circuit_update()
 signal blocked_short_circuit_warning()
 
 func _on_confirm_pressed():
-	confirmed_circuit_update.emit()
+	confirmed_circuit_update.emit(true)
 	hide()
 
 func _on_cancel_pressed():
