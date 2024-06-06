@@ -30,7 +30,6 @@ texture = ExtResource("3_aov1j")
 [node name="CurrentFlow" parent="." instance=ExtResource("3_5c0b4")]
 
 [node name="Battery" parent="." instance=ExtResource("4_41di8")]
-visible = true
 
 [node name="Resistor" parent="." instance=ExtResource("5_eosuv")]
 

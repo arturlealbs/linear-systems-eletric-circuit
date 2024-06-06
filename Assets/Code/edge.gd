@@ -13,7 +13,7 @@ signal sent_flip_request(id:int)
 @onready var current_flow = $CurrentFlow
 @onready var battery = $Battery
 @onready var resistor = $Resistor
-
+@onready var button = $Button
 
 func _ready():
 	match  component:
@@ -45,6 +45,7 @@ func _on_button_up():
 	pressed_edge.emit(id)
 	
 func updated_wire(r:float, v:float) -> void:
+	print("entrou")
 	if r == 0:
 		resistor.visible = false
 	else:

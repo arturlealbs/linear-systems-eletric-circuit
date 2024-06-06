@@ -15,6 +15,5 @@ func _on_edit_button_pressed():
 	hide()
 
 func _on_delete_button_pressed():
-	print("emitiu")
 	delete_component_requested.emit()
 	hide()

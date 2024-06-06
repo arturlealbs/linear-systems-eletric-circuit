@@ -43,5 +43,4 @@ func initialize_circuit() -> void:
 	temp_array.assign(core.HandleCircuitUpdateCall(4,0,5))
 	temp_array.assign(core.HandleCircuitUpdateCall(6,0,5))
 	
-	print(temp_array)
 	interface.update_circuit(temp_array)

@@ -39,6 +39,8 @@ func display_component_popup(id: int) -> void:
 
 func delete_component(id: int) -> void:
 	edge_id = id
+	update_r = 0
+	update_v = 0
 	sent_circuit_update.emit(id, 0, 0)
 
 func get_components_value(r:float, v:float):
@@ -49,7 +51,7 @@ func get_components_value(r:float, v:float):
 func update_circuit(currents: Array[float]) -> void:
 	if is_in_short_circuit:
 		set_short_circuit(false)
-		update_labels(currents)
+	update_labels(currents)
 	update_edges(currents)
 
 func update_edges(currents: Array[float]):
@@ -73,7 +75,6 @@ func cancel_circuit_update() -> void:
 
 func set_short_circuit(b: bool) -> void:
 	is_in_short_circuit = b
-	
 	for group in get_children():
 		if group.name == "Labels":
 			for label in group.get_children():
@@ -83,12 +84,10 @@ func set_short_circuit(b: bool) -> void:
 			for edge in group.get_children():
 				if b:
 					edge.modulate = Color(0.5, 0.5, 0.5, 1)
-					
 				else:
 					edge.modulate = Color(1, 1, 1, 1)
 				
 				if edge.id == edge_id:
-					print("chamou")
 					edge.updated_wire(update_r, update_v)
 				edge.current_flow.animation_player.active = not b
 					
