@@ -14,6 +14,7 @@ func _ready():
 func connect_interface() -> void:
 	interface.sent_circuit_update.connect(handle_update_request)
 	interface.cancelled_circuit_update.connect(abort_update_request)
+	interface.emitted_flip_request.connect(request_flip)
 	
 func handle_update_request(id: int, r: float, v: float):
 	currents.assign(core.HandleCircuitUpdateCall(id, r, v))
@@ -25,6 +26,12 @@ func handle_update_request(id: int, r: float, v: float):
 func abort_update_request() -> void:
 	core.AbortCircuitUpdateCall()
 
+func request_flip(id: int) -> void:
+	var temp_array: Array[float]
+	temp_array.assign(core.FlipBatteryComponent(id))
+	currents.assign(core.HandleCircuitUpdateCall(temp_array[0], temp_array[1], temp_array[2]))
+	interface.update_circuit(currents)
+	
 func initialize_circuit() -> void:
 	var temp_array: Array[float]
 	
@@ -36,4 +43,5 @@ func initialize_circuit() -> void:
 	temp_array.assign(core.HandleCircuitUpdateCall(4,0,5))
 	temp_array.assign(core.HandleCircuitUpdateCall(6,0,5))
 	
+	print(temp_array)
 	interface.update_circuit(temp_array)

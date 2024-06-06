@@ -25,7 +25,13 @@ public partial class Core : Node
 		}
 	}
 
-	public void AbortCircuitUpdateCall(){
+	public void AbortCircuitUpdateCall()
+	{
 		_matrixData.ReverseModification();
+	}
+	
+	public double[] FlipBatteryComponent(int id)
+	{
+		return _matrixData.Flip(id);
 	}
 }

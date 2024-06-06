@@ -14,56 +14,79 @@ script = ExtResource("1_seadv")
 
 [node name="Edge0" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(768, 160)
-rotation = -1.57079
+rotation = 1.5708
 
 [node name="Edge1" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(576, 352)
 id = 1
+component = "RESISTOR"
 
 [node name="Edge2" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(1152, 160)
-rotation = -1.57079
+rotation = -1.5708
 id = 2
+current_id = 1
+battery_flipped = true
 
 [node name="Edge3" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(960, 352)
+rotation = 3.14159
 id = 3
+current_id = 2
 
 [node name="Edge4" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(768, 544)
 rotation = -1.57079
 id = 4
+current_id = 3
+component = "BATTERY"
 
 [node name="Edge5" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(1344, 352)
 id = 5
+current_id = 1
+battery_flipped = true
+component = "RESISTOR"
 
 [node name="Edge6" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(1152, 544)
-rotation = -1.57079
+rotation = 1.5708
 id = 6
+current_id = 5
+battery_flipped = true
+component = "BATTERY"
 
 [node name="Edge7" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(576, 736)
 id = 7
+current_id = 6
+component = "RESISTOR"
 
 [node name="Edge8" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(768, 928)
 rotation = -1.57079
 id = 8
+current_id = 6
 
 [node name="Edge9" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(960, 736)
+rotation = 3.14159
 id = 9
+current_id = 4
 
 [node name="Edge10" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(1152, 928)
-rotation = -1.57079
+rotation = 1.5708
 id = 10
+current_id = 7
+battery_flipped = true
 
 [node name="Edge11" parent="Edges" instance=ExtResource("2_skuse")]
 position = Vector2(1344, 736)
 id = 11
+current_id = 7
+battery_flipped = true
+component = "RESISTOR"
 
 [node name="Vertices" type="Node" parent="."]
 
@@ -104,82 +127,82 @@ position = Vector2(1344, 928)
 
 [node name="CurrentLabel_0" parent="Labels" instance=ExtResource("5_6ulyj")]
 offset_left = 736.0
-offset_top = 48.0
+offset_top = 80.0
 offset_right = -1120.0
-offset_bottom = -968.0
+offset_bottom = -936.0
 
 [node name="CurrentLabel_1" parent="Labels" instance=ExtResource("5_6ulyj")]
-offset_left = 448.0
+offset_left = 488.0
 offset_top = 320.0
-offset_right = -1408.0
+offset_right = -1368.0
 offset_bottom = -696.0
 
 [node name="CurrentLabel_2" parent="Labels" instance=ExtResource("5_6ulyj")]
 offset_left = 1120.0
-offset_top = 48.0
+offset_top = 80.0
 offset_right = -736.0
-offset_bottom = -968.0
+offset_bottom = -936.0
 current_id = 1
 
 [node name="CurrentLabel_3" parent="Labels" instance=ExtResource("5_6ulyj")]
-offset_left = 832.0
+offset_left = 872.0
 offset_top = 320.0
-offset_right = -1024.0
+offset_right = -984.0
 offset_bottom = -696.0
-current_id = 4
+current_id = 2
 
 [node name="CurrentLabel_4" parent="Labels" instance=ExtResource("5_6ulyj")]
 offset_left = 736.0
-offset_top = 592.0
+offset_top = 560.0
 offset_right = -1120.0
-offset_bottom = -424.0
+offset_bottom = -456.0
 current_id = 3
 
 [node name="CurrentLabel_5" parent="Labels" instance=ExtResource("5_6ulyj")]
-offset_left = 1408.0
+offset_left = 1368.0
 offset_top = 320.0
-offset_right = -448.0
+offset_right = -488.0
 offset_bottom = -696.0
 current_id = 1
 
 [node name="CurrentLabel_6" parent="Labels" instance=ExtResource("5_6ulyj")]
 offset_left = 1120.0
-offset_top = 432.0
+offset_top = 464.0
 offset_right = -736.0
-offset_bottom = -584.0
-current_id = 1
+offset_bottom = -552.0
+current_id = 5
 
 [node name="CurrentLabel_7" parent="Labels" instance=ExtResource("5_6ulyj")]
-offset_left = 448.0
+offset_left = 488.0
 offset_top = 704.0
-offset_right = -1408.0
+offset_right = -1368.0
 offset_bottom = -312.0
 current_id = 6
 
 [node name="CurrentLabel_8" parent="Labels" instance=ExtResource("5_6ulyj")]
 offset_left = 736.0
-offset_top = 976.0
+offset_top = 944.0
 offset_right = -1120.0
-offset_bottom = -40.0
+offset_bottom = -72.0
 current_id = 6
 
 [node name="CurrentLabel_9" parent="Labels" instance=ExtResource("5_6ulyj")]
-offset_left = 1024.0
+offset_left = 984.0
 offset_top = 704.0
-offset_right = -832.0
+offset_right = -872.0
 offset_bottom = -312.0
 current_id = 4
 
 [node name="CurrentLabel_10" parent="Labels" instance=ExtResource("5_6ulyj")]
 offset_left = 1120.0
-offset_top = 976.0
+offset_top = 944.0
 offset_right = -736.0
-offset_bottom = -40.0
+offset_bottom = -72.0
 current_id = 7
 
 [node name="CurrentLabel_11" parent="Labels" instance=ExtResource("5_6ulyj")]
-offset_left = 1408.0
+offset_left = 1368.0
 offset_top = 704.0
-offset_right = -448.0
+offset_right = -488.0
 offset_bottom = -312.0
 current_id = 7

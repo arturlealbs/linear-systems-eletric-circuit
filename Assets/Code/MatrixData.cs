@@ -23,6 +23,12 @@ public partial class MatrixData: Node
 		r[id] = rValue;
 		
 	}
+	
+	public double[] Flip(int id)
+	{
+		v[id] = -v[id];
+		return new double[] {id, r[id], v[id]};
+	}
 
 	public void ReverseModification(){
 		SetComponents((int)lastModification[0], lastModification[1], lastModification[2]);

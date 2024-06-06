@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmq6x72h08hog"
-path="res://.godot/imported/vertex_sprite.png-073e71656143d10905ea687a22b93c1f.ctex"
+uid="uid://duiyj6h4lap6l"
+path="res://.godot/imported/flow.png-cc5d9ae5831eabc1e44162acff2bd1d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/vertex_sprite.png"
-dest_files=["res://.godot/imported/vertex_sprite.png-073e71656143d10905ea687a22b93c1f.ctex"]
+source_file="res://Assets/Sprites/flow.png"
+dest_files=["res://.godot/imported/flow.png-cc5d9ae5831eabc1e44162acff2bd1d6.ctex"]
 
 [params]
 

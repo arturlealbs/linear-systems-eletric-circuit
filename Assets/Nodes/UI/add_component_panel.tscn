@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4550alnvl3c3"]
+[gd_scene load_steps=5 format=3 uid="uid://c4550alnvl3c3"]
 
+[ext_resource type="Theme" uid="uid://bbaihvnlb6xkq" path="res://Assets/Nodes/UI/panel_theme.tres" id="1_84evw"]
 [ext_resource type="Script" path="res://Assets/Code/add_component_panel.gd" id="1_ett0o"]
 [ext_resource type="ButtonGroup" uid="uid://cn1e6il26vlu5" path="res://Assets/Nodes/UI/components_button_group.tres" id="2_nq14o"]
 [ext_resource type="Script" path="res://Assets/Code/line_edit.gd" id="3_f3qbn"]
@@ -11,6 +12,7 @@ initial_position = 4
 size = Vector2i(250, 150)
 visible = false
 popup_window = true
+theme = ExtResource("1_84evw")
 script = ExtResource("1_ett0o")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]

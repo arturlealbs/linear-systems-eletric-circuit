@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6ns4j7lk6ll"]
+[gd_scene load_steps=8 format=3 uid="uid://cv6ns4j7lk6ll"]
 
 [ext_resource type="Script" path="res://Assets/Code/edge.gd" id="1_73pl0"]
+[ext_resource type="Theme" uid="uid://bbaihvnlb6xkq" path="res://Assets/Nodes/UI/panel_theme.tres" id="2_adlhw"]
+[ext_resource type="PackedScene" uid="uid://cis72pam37d6h" path="res://Assets/Nodes/Scenes/current_flow.tscn" id="3_5c0b4"]
+[ext_resource type="Texture2D" uid="uid://cpbrsdiltk81s" path="res://Assets/Sprites/edge_tile.png" id="3_aov1j"]
+[ext_resource type="PackedScene" uid="uid://bfmsghcncaaru" path="res://Assets/Nodes/Scenes/battery.tscn" id="4_41di8"]
+[ext_resource type="PackedScene" uid="uid://ce5r1im3fv8kk" path="res://Assets/Nodes/Scenes/resistor.tscn" id="5_eosuv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bul6u"]
 
 [node name="Edge" type="Node2D"]
 script = ExtResource("1_73pl0")
@@ -11,12 +18,20 @@ offset_top = -184.0
 offset_right = 8.0
 offset_bottom = 184.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_adlhw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bul6u")
 action_mode = 0
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(0, -233.561)
-scale = Vector2(1, 1.02439)
-points = PackedVector2Array(0, 40.5714, 0, 415.429)
-width = 4.0
+[node name="Line" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 48)
+texture = ExtResource("3_aov1j")
+
+[node name="CurrentFlow" parent="." instance=ExtResource("3_5c0b4")]
+
+[node name="Battery" parent="." instance=ExtResource("4_41di8")]
+visible = true
+
+[node name="Resistor" parent="." instance=ExtResource("5_eosuv")]
 
 [connection signal="button_up" from="Button" to="." method="_on_button_up"]

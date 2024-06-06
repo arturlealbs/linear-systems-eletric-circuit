@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8relkq8q5ih5"]
+
+[ext_resource type="PackedScene" uid="uid://cjmorw1hn0gjy" path="res://Assets/Nodes/UI/component_window.tscn" id="1_m088n"]
+[ext_resource type="Script" path="res://Assets/Code/battery_window.gd" id="2_h0tl7"]
+[ext_resource type="Theme" uid="uid://bbaihvnlb6xkq" path="res://Assets/Nodes/UI/panel_theme.tres" id="3_j0acm"]
+
+[node name="BatteryWindow" instance=ExtResource("1_m088n")]
+script = ExtResource("2_h0tl7")
+
+[node name="Title" parent="VBoxContainer" index="0"]
+theme = ExtResource("3_j0acm")
+
+[node name="Invert" type="Button" parent="VBoxContainer" index="1"]
+layout_mode = 2
+theme = ExtResource("3_j0acm")
+text = "Inverter"
+
+[connection signal="pressed" from="VBoxContainer/Invert" to="." method="_on_invert_pressed"]

@@ -12,5 +12,5 @@ func _on_cancel_pressed():
 	cancelled_circuit_update.emit()
 	hide()
 
-func _on_dont_show_again_toggled(toggled_on):
+func _on_dont_show_again_toggled(_toggled_on):
 	blocked_short_circuit_warning.emit()
