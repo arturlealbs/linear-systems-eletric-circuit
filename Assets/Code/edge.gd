@@ -45,18 +45,25 @@ func _on_button_up():
 	pressed_edge.emit(id)
 	
 func updated_wire(r:float, v:float) -> void:
-	print("entrou")
-	if r == 0:
+	if r == 0 and v != 0:
 		resistor.visible = false
-	else:
-		resistor.update_component_text(r)
-		resistor.visible = true
-	
-	if v == 0:
-		battery.visible = false
-	else:
 		battery.visible = true
+		button.disabled = true
+		
 		battery.update_component_text(v)
+		
+	elif r != 0 and v == 0:
+		resistor.visible = true
+		battery.visible = false
+		button.disabled = true
+		
+		resistor.update_component_text(r)
+	
+	else:
+		resistor.visible = false
+		battery.visible = false
+		button.disabled = false
+		
 		
 	
 
